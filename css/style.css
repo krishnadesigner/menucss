@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: .4s;
+    text-transform: capitalize;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    /* overflow: hidden; */
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+:root {
+    --mainclr: #239f85;
+    --secclr: #ff5d22;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
+    background-color: var(--mainclr);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    border-bottom: 1px solid white;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+.header .navbar a {
+    font-size: 1.6rem;
+    margin-left: 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+.header .navbar a.active {
+    color: orange;
+}
+
+.header .navbar a:hover {
+    color: orange;
+}
+
+.header .navbar a::before {
+    position: absolute;
+    content: "";
+    /* width: 10%; */
+    height: 1px;
+    background-color: var(--secclr);
+    bottom: -1px;
+    left: 0;
+}
+
+.header .navbar a:hover::before {
+    width: 100%;
+}
+
+
+.btns {
+    padding: 10px 25px;
+    font-size: 1.5rem;
+    color: white;
+    background-color: var(--secclr);
+    border-radius: 5px;
+}
+
+.btns:hover {
+    background: transparent;
+    /* border: 1px solid var(--secclr); */
+    box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.icon div {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: white;
+    display: none;
+}
+
+.navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* banner */
+.banner {
+    background-image: url(../images/background.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 6%;
+    position: relative;
+}
+
+.banner-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-80%);
+}
+
+.banner-content h1 {
+    color: black;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner-content a {
+    background-color: var(--secclr);
+    padding: 1.5rem 3rem;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    color: white;
+    transition: 0.5s;
+}
+
+
+.banner-content a:hover {
+    background-color: transparent;
+    border: 1px solid var(--secclr);
+    color: black;
+}
+
+
+.login-form {
+    position: absolute;
+    width: 350px;
+    top: 60%;
+    right: 200px;
+    background: white;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-form h1 {
+    text-align: center;
+    font-size: 23px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #383333;
+    padding-top: 10px;
+    padding-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-form h3 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    color: gray;
+    padding-bottom: 20px;
+}
+
+.login-form input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid orange;
+}
+
+.login-form .btns {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 13px 0;
+    color: black;
+    cursor: pointer;
+}
+
+.login-form .btns:hover {
+    background-color: #fff022;
+}
+
+
+/* about */
+.about {
+    padding: 3rem 7%;
+
+}
+
+
+
+
+
+
+
+
+
+@media (max-width:767px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    .icon div {
+        display: initial;
+    }
+
+
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--secclr);
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        clip-path: polygon(0, 0, 0 100% 0 100%);
+    }
+
+
+
+    .navbar a {
+        display: block;
+        color: black !important;
+        font-size: 2rem;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .banner-content {
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding-left: 5rem;
+    }
+}
